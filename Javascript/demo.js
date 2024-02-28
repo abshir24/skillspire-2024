@@ -1,0 +1,1 @@
+console.log("This is the content from my external js file")
