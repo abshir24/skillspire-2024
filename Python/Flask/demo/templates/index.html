@@ -1,0 +1,32 @@
+<html>
+    <head>
+        <title>This is a demo</title>
+    </head>
+
+    <body>
+        <h1>Register</h1>
+
+        <form action="/formdata" method="POST">
+            <label>Username:</label><br>
+            <input type="text" name="username"><br>
+
+            <label>Email:</label><br>
+            <input type="email" name="email"><br>
+
+            <label>Password:</label><br>
+            <input type="password" name="password"><br>
+
+            <input type="submit" value="Submit!">
+        </form>
+
+
+      
+        <h1>Username: {{session.username}}</h1>
+        <h1>Email: {{session.email}}</h1>
+        <h1>Password: {{session.password}}</h1>
+    
+        
+    </body>
+</html>
+
+

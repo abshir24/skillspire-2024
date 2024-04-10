@@ -1,0 +1,21 @@
+<html>
+    <head>
+        <title>Fsf4</title>
+    </head>
+
+    <body>
+       <h1>Edit User {{id}}</h1>
+
+       <form action="/edituser/{{id}}" method="POST">
+            <label>Name:</label><br>
+            <input type="text" name="name"><br>
+
+            <label>Email:</label><br>
+            <input type="text" name="email"><br>
+
+            <input type="submit" value="Edit!">
+       </form>
+
+        <a href = '/'>Home</a>
+    </body>
+</html>

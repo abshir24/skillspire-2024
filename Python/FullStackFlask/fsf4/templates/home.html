@@ -1,0 +1,41 @@
+<html>
+    <head>
+        <title>Fsf4</title>
+
+        <style>
+            tr,table,td{
+                border:solid black 2px;
+            }
+        </style>
+    </head>
+
+    <body>
+        <h1>Users</h1>
+
+        <table>
+            <tr>
+                <td>Id</td>
+                <td>Name</td>
+                <td>Email</td>
+                <td>Created At</td>
+                <td>Actions</td>
+            </tr>
+
+            {% for user in all_users %}
+                <tr>
+                    <td>{{user.id}}</td>
+                    <td>{{user.email}}</td>
+                    <td>{{user.name}}</td>
+                    <td>{{user.created_at}}</td>
+                    <td>
+                        <a href ="/show/{{user.id}}">Show</a>
+                        <a href ="/edit/{{user.id}}">Edit</a>
+                        <a href ="/delete/{{user.id}}">Delete</a>
+                    </td>
+                </tr>
+            {% endfor %}
+        </table>
+
+        <a href = '/display-add-user'>Add a new user</a>
+    </body>
+</html>

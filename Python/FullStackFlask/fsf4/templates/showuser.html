@@ -1,0 +1,16 @@
+<html>
+    <head>
+        <title>Fsf4</title>
+    </head>
+
+    <body>
+       <h1>User {{user.id}}</h1>
+
+       <h2>Name: {{user.name}}</h2>
+       <h2>Email: {{user.email}}</h2>
+       <h2>Created At: {{user.created_at}}</h2> 
+       
+       <a href="/edit/{{user.id}}">Edit</a>
+       <a href="/delete/{{user.id}}">Delete</a>
+    </body>
+</html>
