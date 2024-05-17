@@ -1,0 +1,52 @@
+{% load static %}
+
+<html>
+    <head>
+        <title>This is the first Django App</title>
+
+        <style>
+            table,tr,td{
+                border:solid black 2px;
+            }
+        </style>
+    </head>
+
+    <body>
+        <h1>Create a post:</h1>
+
+        <form action="/addpost" method="POST">
+            {% csrf_token %}
+
+            <label>Title:</label><br>
+            <input type="text" name="title"><br>
+
+            <label>Post:</label><br>
+            <input type="text" name="post"><br>
+
+            <input type="submit" value="Submit!">
+        </form>
+
+        <table>
+            <tr>
+                <td>Id</td>
+                <td>Title</td>
+                <td>Post</td>
+                <td>Created At</td>
+                <td>Action</td>
+            </tr>
+
+            {% for post in all_posts %}
+                <tr>
+                    <td>{{post.id}}</td>
+                    <td>{{post.title}}</td>
+                    <td>{{post.post}}</td>
+                    <td>{{post.created_at}}</td>
+                    <td>
+                        <a href="/edit/{{post.id}}">Edit</a>
+                        <a href="/delete/{{post.id}}">Delete</a>
+                    </td>
+                </tr>
+            {% endfor %}
+        </table>
+    </body>
+</html>

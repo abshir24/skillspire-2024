@@ -1,0 +1,23 @@
+<html>
+    <head>
+        <title>This is the first Django App</title>
+    </head>
+
+    <body>
+        <h1>Edit Post # {{post.id}}</h1>
+        <h2>Title: {{post.title}}</h2>
+        <h2>Post: {{post.post}}</h2>
+
+        <form action="/edit/{{post.id}}" method="POST">
+            {% csrf_token %}
+
+            <label>Title:</label><br>
+            <input type="text" name="title"><br>
+
+            <label>Post:</label><br>
+            <input type="text" name="post"><br>
+
+            <input type="submit" value="Submit!">
+        </form>
+    </body>
+</html>
